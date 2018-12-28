@@ -88,12 +88,12 @@ class TestIndex extends Component {
   componentDidHide() {
   }
 
-  handleChane(value, item) {
+  handleChane(item, value) {
     console.log(value);
+    console.log(item);
     this.setState({
       items: this.state.items.map(_item => {
         if (_item.AutoId === item.AutoId) {
-          console.log(_item);
           _item.checked = value;
         }
         return _item;
@@ -109,7 +109,7 @@ class TestIndex extends Component {
           items.map(item => {
             return <View className='testItem' key={item.Name}>
               <Text>{item.Name} ({item.checked})</Text>
-              <QuestionItem item={item} options={item.options} onChange={this.handleChane}/>
+              <QuestionItem value={item.checked} options={item.options} onChange={this.handleChane.bind(this, item)}/>
             </View>;
           })
         }

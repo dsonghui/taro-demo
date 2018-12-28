@@ -5,9 +5,9 @@ import './index.less'
 import { ComponentType } from "react";
 
 type PageStateProps = {
-  item: any
+  value: any
   options: any[]
-  onChange(value, item): void;
+  onChange(value): void;
 }
 
 
@@ -19,7 +19,7 @@ class QuestionItem extends Component<PageStateProps> {
   }
 
   handleProxy(e) {
-    this.props.onChange(e.detail.value, this.props.item);
+    this.props.onChange(e.detail.value);
   }
 
 
@@ -33,7 +33,7 @@ class QuestionItem extends Component<PageStateProps> {
               <Label
                 key={option.value}>
                 <View>
-                  <Radio value={option.value} checked={option.value === this.props.item.checked}/>
+                  <Radio value={option.value} checked={option.value === this.props.value}/>
                   <Text>{option.text}</Text>
                 </View>
               </Label>
