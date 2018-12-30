@@ -3,6 +3,7 @@ import { View, Button, Text } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
 import { ComponentType } from "react";
 import { ProfileEntity } from "@/entities/UserEntity";
+import UsersService from '@/services/UsersService';
 
 interface IPropsProfile {
 
@@ -31,11 +32,9 @@ class TestIndex extends Component<IPropsProfile, IStateProfile> {
   componentWillMount() {
   }
 
-  componentWillReact() {
-    console.log('componentWillReact')
-  }
 
   componentDidMount() {
+    UsersService.getProfile();
   }
 
   componentWillUnmount() {

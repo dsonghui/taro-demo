@@ -78,6 +78,7 @@ class Index extends Component {
         <Button onClick={this.increment}>+</Button>
         <Button onClick={this.decrement}>-</Button>
         <Button onClick={this.incrementAsync}>Add Async</Button>
+        <Button onClick={this.handleGo.bind(this, '/pages/test/debug')}> debug</Button>
         <Button onClick={this.handleGo.bind(this, '/pages/test/index')}> Test</Button>
         <Button onClick={this.handleGo.bind(this, '/pages/user/profile')}> profile</Button>
         <Text>{counter}</Text>

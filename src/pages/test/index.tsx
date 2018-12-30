@@ -1,8 +1,8 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
+import { View, Text } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
-import './index.less'
 import { ComponentType } from "react";
+import './index.less'
 import QuestionItem from '../../components/QuestionItem';
 
 type PageStateProps = {
@@ -24,12 +24,10 @@ class TestIndex extends Component {
 
   state: any;
 
-  checkItems: any[];
-
   constructor(props) {
     super(props);
     this.state = {
-      items: new Array(500).fill(null).map((v, index) => {
+      items: new Array(10).fill(null).map((v, index) => {
         return {
           AutoId: index + 1,
           Name: v + 'Name' + (index + 1),

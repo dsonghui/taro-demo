@@ -1,17 +1,15 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Button, Text, RadioGroup, Label, Radio } from '@tarojs/components'
-
+import Taro, { Component } from '@tarojs/taro'
+import { View, Text, RadioGroup, Label, Radio } from '@tarojs/components'
 import './index.less'
-import { ComponentType } from "react";
 
-type PageStateProps = {
-  value: any
-  options: any[]
+interface IProps {
+  value: any;
+  options: any[];
   onChange(value): void;
 }
 
 
-class QuestionItem extends Component<PageStateProps> {
+export default class QuestionItem extends Component<IProps> {
 
   constructor(props) {
     super(props);
@@ -22,7 +20,6 @@ class QuestionItem extends Component<PageStateProps> {
     this.props.onChange(e.detail.value);
   }
 
-
   render() {
     let options = this.props.options;
     return (
@@ -31,7 +28,8 @@ class QuestionItem extends Component<PageStateProps> {
           options.map(option => {
             return (
               <Label
-                key={option.value}>
+                key={option.value}
+              >
                 <View>
                   <Radio value={option.value} checked={option.value === this.props.value}/>
                   <Text>{option.text}</Text>
@@ -44,5 +42,3 @@ class QuestionItem extends Component<PageStateProps> {
     )
   }
 }
-
-export default QuestionItem as ComponentType

@@ -1,9 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { Provider } from '@tarojs/mobx'
 import Index from './pages/index'
-
 import counterStore from './store/counter'
-
 import './app.less'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -29,6 +27,7 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/user/profile',
+      'pages/test/debug',
       'pages/test/index'
     ],
     window: {
@@ -39,17 +38,21 @@ class App extends Component {
     }
   }
 
-  componentDidMount () {}
+  componentDidMount() {
+  }
 
-  componentDidShow () {}
+  componentDidShow() {
+  }
 
-  componentDidHide () {}
+  componentDidHide() {
+  }
 
-  componentDidCatchError () {}
+  componentDidCatchError() {
+  }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
+  render() {
     return (
       <Provider store={store}>
         <Index />

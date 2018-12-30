@@ -3,13 +3,15 @@
  * Author: david.deng<david.deng@jcinfotech.com>
  * Date: 2018/4/25
  */
-import MyGenerate from "src/helpers/MyGenerate";
-import WxStorage from "src/helpers/WxStorage";
+import MyGenerate from "@/helpers/MyGenerate";
+import WxStorage from "@/helpers/WxStorage";
 
 
 export class JCSession {
+  sessionId: string = '';
   SessionCackeKey = 'JC-SessionCackeKey';
   getSession() {
+    if(this.sessionId) return this.sessionId;
     return WxStorage.get(this.SessionCackeKey);
   }
   setSession(sessionId) {
