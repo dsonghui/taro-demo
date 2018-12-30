@@ -32,19 +32,24 @@ class Index extends Component {
     navigationBarTitleText: '首页'
   }
 
-  componentWillMount () { }
+  componentWillMount() {
+  }
 
-  componentWillReact () {
+  componentWillReact() {
     console.log('componentWillReact')
   }
 
-  componentDidMount () { }
+  componentDidMount() {
+  }
 
-  componentWillUnmount () { }
+  componentWillUnmount() {
+  }
 
-  componentDidShow () { }
+  componentDidShow() {
+  }
 
-  componentDidHide () { }
+  componentDidHide() {
+  }
 
   increment = () => {
     const { counterStore } = this.props
@@ -60,9 +65,9 @@ class Index extends Component {
     const { counterStore } = this.props
     counterStore.incrementAsync()
   }
-  handleGoTest() {
+  handleGo(url) {
     Taro.navigateTo({
-      url: '/pages/test/index'
+      url: url
     })
   }
 
@@ -73,11 +78,12 @@ class Index extends Component {
         <Button onClick={this.increment}>+</Button>
         <Button onClick={this.decrement}>-</Button>
         <Button onClick={this.incrementAsync}>Add Async</Button>
-        <Button onClick={this.handleGoTest}> go Test</Button>
+        <Button onClick={this.handleGo.bind(this, '/pages/test/index')}> Test</Button>
+        <Button onClick={this.handleGo.bind(this, '/pages/user/profile')}> profile</Button>
         <Text>{counter}</Text>
       </View>
     )
   }
 }
 
-export default Index  as ComponentType
+export default Index as ComponentType

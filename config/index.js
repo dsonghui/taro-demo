@@ -7,6 +7,9 @@ const config = {
     '750': 1,
     '828': 1.81 / 2
   },
+  alias:{
+    '@': 'src'
+  },
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: {
